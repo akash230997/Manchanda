@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import Carousel from '../components/Carousel'
 import Reveal from '../components/Reveal'
-import { site, services, links, carousel } from '../content'
+import { site, services, links, carousel, industries } from '../content'
 
 export default function Home() {
   return (
     <>
       <Seo
-        description="Chartered Accountants in New Delhi since 1981 offering audit and assurance, taxation, accounting and advisory services."
+        description="HSPC — Chartered Professional Accountants in London and Mississauga offering bookkeeping, taxation and advisory services across the GTA, KWC and London regions."
         path="/"
       />
       <Carousel slides={carousel} />
@@ -16,11 +16,11 @@ export default function Home() {
         <Reveal className="grid3">
           <article className="card hover-card">
             <p className="kicker">The firm</p>
-            <h2>Welcome to our firm</h2>
+            <h2>Welcome to HSPC</h2>
             <p>
-              Manchanda & Manchanda is a firm of Chartered Accountants with office in
-              central Delhi established in {site.founded}. We are serving for over 3
-              decades.
+              Founded by {site.founder}, a Chartered Accountant from India and CPA in
+              Canada. We deliver the technical depth of a large consulting firm with
+              personal relationships and affordability.
             </p>
             <Link className="text-link" to="/about">
               More about us
@@ -52,18 +52,33 @@ export default function Home() {
           </article>
         </Reveal>
       </section>
+      <section className="container section">
+        <Reveal>
+          <p className="kicker">Industries served</p>
+          <h2>Designed solutions across sectors</h2>
+          <p className="muted section-lead">
+            With our “{site.approach}” approach, we support numerous industries and
+            associations across the {site.regions}.
+          </p>
+          <ul className="industry-grid">
+            {industries.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Reveal>
+      </section>
       <section className="cta-band">
         <Reveal className="container cta-band-inner">
           <div>
             <p className="kicker">Next step</p>
-            <h2>Ready to discuss your brief?</h2>
+            <h2>Send a brief note for a free consultation</h2>
             <p className="muted">
-              Reach the team in Defence Colony for audit, tax, accounting or advisory
-              support.
+              Reach {site.contactName} in London or Mississauga for bookkeeping, tax or
+              advisory support.
             </p>
           </div>
           <Link className="btn" to="/contact">
-            Contact the firm
+            Contact HSPC
           </Link>
         </Reveal>
       </section>

@@ -4,7 +4,7 @@ export default function Seo({ title, description, path = '/' }) {
   useEffect(() => {
     const full = title
       ? `${title} | ${site.name}`
-      : `${site.name} | ${site.tagline}, New Delhi`
+      : `${site.name} | ${site.tagline}, London & Mississauga`
     document.title = full
     const set = (sel, attr, val) => {
       const el = document.querySelector(sel)

@@ -7,7 +7,7 @@ export default function Services() {
     <>
       <Seo
         title="Services"
-        description="Audit and assurance, taxation, accounting and advisory services from Manchanda & Manchanda, Chartered Accountants."
+        description="Bookkeeping and cloud accounting, corporate and personal taxation, payroll, international tax and advisory services from HSPC."
         path="/services"
       />
       <section className="page-hero">
@@ -15,8 +15,8 @@ export default function Services() {
           <p className="eyebrow">Practice areas</p>
           <h1>Services</h1>
           <p className="lead">
-            Audit, tax, accounting and advisory to help organisations mitigate risk and
-            perform.
+            Bookkeeping, taxation and advisory — designed to help organisations stay
+            compliant and perform with clarity.
           </p>
         </div>
       </section>

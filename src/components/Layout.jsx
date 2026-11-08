@@ -29,8 +29,11 @@ export default function Layout() {
       <header className="header">
         <div className="container bar">
           <Link to="/" className="brand">
-            <strong>{site.name}</strong>
-            <span>{site.tagline}</span>
+            <img src={site.logo} alt={`${site.name} logo`} className="brand-logo" />
+            <span className="brand-copy">
+              <strong>{site.name}</strong>
+              <span>{site.tagline}</span>
+            </span>
           </Link>
           <nav className={open ? 'nav open' : 'nav'} aria-label="Main">
             {nav.map(([to, label]) => (
@@ -82,12 +85,15 @@ export default function Layout() {
         <div className="container foot-grid">
           <div>
             <p className="brand-mini">
-              <strong>{site.name}</strong>
-              <span>{site.tagline}</span>
+              <img src={site.logo} alt="" className="brand-logo sm" />
+              <span>
+                <strong>{site.legalName}</strong>
+                <span>{site.tagline}</span>
+              </span>
             </p>
             <p className="muted">
-              Established {site.founded}. Technical knowledge and service quality, with a
-              focus on personal relationships.
+              World-class service with a focus on personal relationships — serving clients
+              across the {site.regions}.
             </p>
           </div>
           <nav aria-label="Footer">
@@ -98,8 +104,8 @@ export default function Layout() {
             ))}
           </nav>
           <div>
-            <p>{site.address}</p>
-            <p>{site.phone}</p>
+            <p>{site.headOffice.lines.join(', ')}</p>
+            <p>{site.branchOffice.lines.join(', ')}</p>
             <p>
               <a href={`mailto:${site.email}`}>{site.email}</a>
             </p>
@@ -107,7 +113,7 @@ export default function Layout() {
         </div>
         <div className="container foot-base">
           <p>
-            © {new Date().getFullYear()} {site.name}, {site.tagline}.
+            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
         </div>
       </footer>

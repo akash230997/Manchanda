@@ -1,4 +1,6 @@
-# Manchanda & Manchanda – React website
+# HSPC – React website
+
+HS Professional Corporation (Chartered Professional Accountants) — London & Mississauga.
 
 ## Run locally
 
@@ -11,9 +13,9 @@
 
 ## Before building
 
-1. `src/content.js`: set SITE_URL, confirm email/phone/address.
-2. Replace `https://www.example.com` with the real domain in index.html, public/sitemap.xml, public/robots.txt.
-3. Set `$to` in public/api/contact.php.
+1. `src/content.js`: confirm SITE_URL, email, and office addresses.
+2. Confirm domain in `index.html`, `public/sitemap.xml`, `public/robots.txt`.
+3. Confirm `$to` in `public/api/contact.php`.
 
 ## Deploy to GoDaddy (cPanel / Linux shared hosting)
 
@@ -25,4 +27,4 @@
 
 ## Add content
 
-Text: `src/content.js`. New page: file in `src/pages`, Route in `App.jsx`, link in `nav`, entry in sitemap.xml.
+Text: `src/content.js`. Brand assets: `public/brand`, `public/team`. New page: file in `src/pages`, Route in `App.jsx`, link in `nav`, entry in sitemap.xml.
