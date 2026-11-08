@@ -41,8 +41,8 @@ export const carousel = [
     text: `At HSPC we are committed to cutting through complexity for clients across the ${site.regions}.`,
     cta: { to: '/contact', label: 'Free consultation' },
     ghost: { to: '/services', label: 'Our services' },
-    image: '/carousel/heritage.jpg',
-    alt: 'Professional advisory practice serving Ontario businesses',
+    image: '/carousel/welcome.jpg',
+    alt: 'Modern Canadian corporate office skyline at twilight',
   },
   {
     id: 'bookkeeping',
@@ -51,7 +51,7 @@ export const carousel = [
     text: 'Regular bookkeeping, interim financials, projections and compilation engagement reports.',
     cta: { to: '/services#bookkeeping', label: 'Explore accounting' },
     ghost: { to: '/contact', label: 'Speak with us' },
-    image: '/carousel/advisory.jpg',
+    image: '/services/bookkeeping.jpg',
     alt: 'Modern workspace for cloud accounting and bookkeeping',
   },
   {
@@ -61,7 +61,7 @@ export const carousel = [
     text: 'From T2 and HST filings to CRA audits, T1 planning and cross-border structuring.',
     cta: { to: '/services#taxation', label: 'Explore tax' },
     ghost: { to: '/contact', label: 'Request advice' },
-    image: '/carousel/tax.jpg',
+    image: '/services/taxation.jpg',
     alt: 'Detailed tax planning desk for Canadian businesses',
   },
   {
@@ -71,7 +71,7 @@ export const carousel = [
     text: 'Practical advisory that helps owners strengthen operations and make confident decisions.',
     cta: { to: '/services#advisory', label: 'Explore advisory' },
     ghost: { to: '/team', label: 'Meet the founder' },
-    image: '/carousel/audit.jpg',
+    image: '/services/advisory.jpg',
     alt: 'Executive meeting space for advisory and CFO support',
   },
 ]
@@ -100,10 +100,83 @@ export const industries = [
   'Car Rental',
   'Professionals',
 ]
+export const industrySlides = [
+  {
+    id: 'logistics',
+    kicker: 'Industry',
+    title: 'Transportation and Logistics',
+    text: 'Clear books and tax support for fleets, freight and supply-chain operators.',
+    image: '/industries/logistics.jpg',
+    alt: 'Logistics warehouse and freight trucks at dusk',
+  },
+  {
+    id: 'dealership',
+    kicker: 'Industry',
+    title: 'Dealerships & Auto Collision',
+    text: 'Practical accounting for dealerships, body shops and automotive service businesses.',
+    image: '/industries/dealership.jpg',
+    alt: 'Modern automobile dealership showroom',
+  },
+  {
+    id: 'tech',
+    kicker: 'Industry',
+    title: 'IT Consultants',
+    text: 'Structured bookkeeping and tax planning for consulting and professional services firms.',
+    image: '/industries/tech.jpg',
+    alt: 'Modern technology consulting workspace',
+  },
+  {
+    id: 'food',
+    kicker: 'Industry',
+    title: 'Food and Beverage',
+    text: 'Reliable interim financials and HST support for restaurants and hospitality operators.',
+    image: '/industries/food.jpg',
+    alt: 'Upscale restaurant dining interior',
+  },
+  {
+    id: 'realestate',
+    kicker: 'Industry',
+    title: 'Real Estate and Construction',
+    text: 'Project-aware accounting and advisory for builders, developers and property businesses.',
+    image: '/industries/realestate.jpg',
+    alt: 'Contemporary construction site at blue hour',
+  },
+]
+export const serviceShowcase = [
+  {
+    id: 'bookkeeping-show',
+    kicker: 'Practice area',
+    title: 'Bookkeeping and Cloud Accounting',
+    text: 'Regular bookkeeping, interim financials, projections and compilation engagement reports.',
+    image: '/services/bookkeeping.jpg',
+    alt: 'Cloud accounting desk with laptop and ledgers',
+    link: { to: '/services#bookkeeping', label: 'View bookkeeping services' },
+  },
+  {
+    id: 'taxation-show',
+    kicker: 'Practice area',
+    title: 'Taxation',
+    text: 'Corporate, payroll, personal and international tax — including CRA compliance and filings.',
+    image: '/services/taxation.jpg',
+    alt: 'Professional tax planning workspace',
+    link: { to: '/services#taxation', label: 'View tax services' },
+  },
+  {
+    id: 'advisory-show',
+    kicker: 'Practice area',
+    title: 'Advisory',
+    text: 'Internal controls, SOP design, fractional CFO support and valuation services.',
+    image: '/services/advisory.jpg',
+    alt: 'Executive advisory lounge with city views',
+    link: { to: '/services#advisory', label: 'View advisory services' },
+  },
+]
 export const services = [
   {
     id: 'bookkeeping',
     title: 'Bookkeeping and Cloud Accounting',
+    image: '/services/bookkeeping.jpg',
+    alt: 'Cloud accounting desk with laptop and ledgers',
     intro: [
       'We work with our clients to help them achieve compliance and ensuring that accounting operations match the objectives of the business.',
     ],
@@ -117,6 +190,8 @@ export const services = [
   {
     id: 'taxation',
     title: 'Taxation',
+    image: '/services/taxation.jpg',
+    alt: 'Professional tax planning workspace',
     intro: [
       'Our tax practice covers corporate, payroll, personal and international taxation — with practical guidance for Canadian businesses and cross-border matters.',
     ],
@@ -156,6 +231,8 @@ export const services = [
   {
     id: 'advisory',
     title: 'Advisory',
+    image: '/services/advisory.jpg',
+    alt: 'Executive advisory lounge with city views',
     intro: [
       'Beyond compliance, we support owners with controls, process design and senior financial leadership when they need it.',
     ],

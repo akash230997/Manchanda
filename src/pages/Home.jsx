@@ -1,8 +1,17 @@
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import Carousel from '../components/Carousel'
+import MediaCarousel from '../components/MediaCarousel'
 import Reveal from '../components/Reveal'
-import { site, services, links, carousel, industries } from '../content'
+import {
+  site,
+  services,
+  links,
+  carousel,
+  industries,
+  industrySlides,
+  serviceShowcase,
+} from '../content'
 
 export default function Home() {
   return (
@@ -54,13 +63,33 @@ export default function Home() {
       </section>
       <section className="container section">
         <Reveal>
+          <p className="kicker">Practice areas</p>
+          <h2>Services in focus</h2>
+          <p className="muted section-lead">
+            Explore how we support bookkeeping, tax and advisory needs for growing
+            Ontario businesses.
+          </p>
+          <MediaCarousel
+            slides={serviceShowcase}
+            label="Service showcase"
+            interval={7000}
+          />
+        </Reveal>
+      </section>
+      <section className="container section">
+        <Reveal>
           <p className="kicker">Industries served</p>
           <h2>Designed solutions across sectors</h2>
           <p className="muted section-lead">
             With our “{site.approach}” approach, we support numerous industries and
             associations across the {site.regions}.
           </p>
-          <ul className="industry-grid">
+          <MediaCarousel
+            slides={industrySlides}
+            label="Industries served"
+            interval={6000}
+          />
+          <ul className="industry-grid compact">
             {industries.map((item) => (
               <li key={item}>{item}</li>
             ))}

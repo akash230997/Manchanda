@@ -1,6 +1,7 @@
 import Seo from '../components/Seo'
 import Reveal from '../components/Reveal'
-import { about, founder, industries, site } from '../content'
+import MediaCarousel from '../components/MediaCarousel'
+import { about, founder, industries, industrySlides, site } from '../content'
 
 export default function About() {
   return (
@@ -37,9 +38,20 @@ export default function About() {
             ))}
           </div>
         </Reveal>
+      </section>
+      <section className="container section">
         <Reveal>
           <h2>Industries served</h2>
-          <ul className="industry-grid">
+          <p className="muted section-lead">
+            We provide designed solutions across a wide range of industries and
+            associations.
+          </p>
+          <MediaCarousel
+            slides={industrySlides}
+            label="Industries served"
+            interval={6000}
+          />
+          <ul className="industry-grid compact">
             {industries.map((item) => (
               <li key={item}>{item}</li>
             ))}
