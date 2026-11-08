@@ -23,37 +23,41 @@ export default function PageTransition() {
   const location = useLocation()
   const outlet = useOutlet()
   const shownPath = useRef(location.pathname)
+  const outletRef = useRef(outlet)
+  const locationRef = useRef(location)
   const pending = useRef(null)
   const [stage, setStage] = useState('enter')
-  const [shown, setShown] = useState({
+  const [shown, setShown] = useState(() => ({
     path: location.pathname,
     node: outlet,
-  })
+  }))
 
-  // Keep the latest destination ready while the current page exits.
+  outletRef.current = outlet
+  locationRef.current = location
+
+  // Capture the destination page while the current one is still exiting.
   if (location.pathname !== shownPath.current) {
-    pending.current = { path: location.pathname, node: outlet, location }
-  } else {
-    pending.current = null
+    pending.current = {
+      path: location.pathname,
+      node: outlet,
+      location,
+    }
   }
 
   useEffect(() => {
-    if (location.pathname === shownPath.current) {
-      setShown({ path: location.pathname, node: outlet })
-      return
-    }
+    if (location.pathname === shownPath.current) return
 
     if (prefersReducedMotion()) {
       shownPath.current = location.pathname
       pending.current = null
-      setShown({ path: location.pathname, node: outlet })
+      setShown({ path: location.pathname, node: outletRef.current })
       setStage('enter')
-      scrollFor(location)
+      scrollFor(locationRef.current)
       return
     }
 
     setStage((s) => (s === 'exit' ? s : 'exit'))
-  }, [location.pathname, outlet])
+  }, [location.pathname])
 
   useEffect(() => {
     if (location.pathname !== shownPath.current) return
@@ -64,8 +68,11 @@ export default function PageTransition() {
     if (e.target !== e.currentTarget) return
     if (stage !== 'exit') return
 
-    const next = pending.current
-    if (!next) return
+    const next = pending.current || {
+      path: locationRef.current.pathname,
+      node: outletRef.current,
+      location: locationRef.current,
+    }
 
     shownPath.current = next.path
     pending.current = null

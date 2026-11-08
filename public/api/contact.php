@@ -1,6 +1,6 @@
 <?php
 // Works on GoDaddy cPanel (Linux) shared hosting. Change $to before deploying.
-$to = 'info@mnmcapartners.com';
+$to = 'harmeet@hsprofessional.ca';
 header('Content-Type: application/json');
 $d = json_decode(file_get_contents('php://input'), true) ?: [];
 $clean = fn($k) => trim(strip_tags($d[$k] ?? ''));
